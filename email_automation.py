@@ -29,8 +29,8 @@ message = """
 #connect to the SMTP server
 s = smtplib.SMTP(host='smtp.gmail.com', port=587)
 s.starttls()
-# sender_email = the email address to be used for send emails
-# sender_email_password : more information above
+sender_email = 'soleiman.anwary@gmail.com'
+#sender_email_password = enter the password here
 s.login('sender_email', 'sender_email_password')
 
 # create a message
