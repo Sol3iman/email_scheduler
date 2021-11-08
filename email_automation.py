@@ -10,21 +10,13 @@ from string import Template
 import base64
 
 # Html email contents
-message = """
-          <!DOCTYPE html>
-           <html>
-            <head>
-              <title>Dear  !</title>
-            </head>
-            <> Lorem Ipsum Dolor </p>
-           <footer style="background-color: gray;">
-              <p style="text-align: center;">Contact us on : 
-                             <a href="mailto:haaply.apps@gmail.com">
-                             haaply.apps@gmail.com</a></p>
-              </footer>
+message = """<html>
+    <head></head>
+    <body>
+        <p style='color:orange;'>This is my first HTML automated email!</p>
+        <p>Alessio</p>
     </body>
-  </html>
-"""
+</html>"""
 
 #connect to the SMTP server
 s = smtplib.SMTP(host='smtp.gmail.com', port=587)
@@ -39,7 +31,7 @@ msg = MIMEMultipart()
 # setup the parameters of the message
 msg['From'] = 'sender_email'
 msg['To'] = 'recipient_email'
-msg['Subject'] = 'email_subject'
+msg['Subject'] = 'AUTOMATED EMAIL'
 msg.attach(MIMEText(message, 'html'))
 
 # send the message via the server set up earlier.
