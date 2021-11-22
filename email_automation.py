@@ -6,9 +6,6 @@ from email.mime.text import MIMEText
 # to create html template for the email content
 from string import Template
 
-# if we want include images
-import base64
-
 # Html email contents
 message = """<html>
     <head></head>
@@ -22,7 +19,8 @@ message = """<html>
 s = smtplib.SMTP(host='smtp.gmail.com', port=587)
 s.starttls()
 sender_email = 'soleiman.anwary@gmail.com'
-#sender_email_password = enter the password here
+sender_email_password = 'enter password'
+recipient_email = 'soleiman.anwary@gmail.com'
 s.login('sender_email', 'sender_email_password')
 
 # create a message
@@ -31,7 +29,7 @@ msg = MIMEMultipart()
 # setup the parameters of the message
 msg['From'] = 'sender_email'
 msg['To'] = 'recipient_email'
-msg['Subject'] = 'AUTOMATED EMAIL'
+msg['Subject'] = 'AUTOMATED EMAIL TEST SOL'
 msg.attach(MIMEText(message, 'html'))
 
 # send the message via the server set up earlier.
